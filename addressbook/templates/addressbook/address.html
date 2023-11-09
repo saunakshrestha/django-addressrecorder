@@ -1,0 +1,21 @@
+
+{% extends 'addressbook/base.html' %}
+{% block address_content %}
+<div class="d-flex justify-content-center align-items-center m-5 p-5 fs-2 ">
+    <form method='POST'>
+        {% csrf_token %}
+        <div>Name:</div>
+        <div class=" mb-2 pb-2">
+        {{form.name}}
+        </div>
+        <div>Address:</div>
+        <div class="mb-2 pb-2 ">
+        {{form.address}}
+       </div>
+
+       <input class="btn fs-4 btn-primary" type='submit'>
+
+    </form>
+    
+</div>
+{% endblock address_content %}

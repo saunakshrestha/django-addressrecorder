@@ -1,0 +1,35 @@
+{% extends 'addressbook/base.html' %}
+
+{% block home_list_entries %}
+    <div class="container m-4">
+        <div class="d-flex justify-content-around align-items-center">
+            <div class="fs-2">Address Book</div>
+            <div class="" ><a class="btn btn-primary text-white p-2 fs-5" href="../address/">Add New Address +</a></div>
+        </div>
+
+        
+        
+        <table class="table table-striped mt-3">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+         {% for address_entry in address_entries %}
+        <tr>
+           
+            <td class="text-capitalize fs-6 w-25">{{address_entry.name}}</td>
+            <td class="text-capitalize fs-6 w-25">{{address_entry.address}}</td>
+            <td class="text-capitalize fs-6 w-25">
+                <a class="btn btn-sucess border-info rounded" href="">Edit</a>
+                <a class="btn btn-sucess border-info rounded" href="">Delete</a>
+            </td>
+           
+        </tr>
+         {% endfor %}
+        </table>
+        
+        
+    </div>
+    
+{% endblock home_list_entries%}
