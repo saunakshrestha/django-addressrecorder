@@ -4,14 +4,21 @@
 <div class="d-flex justify-content-center align-items-center m-5 p-5 fs-2 ">
     <form method='POST'>
         {% csrf_token %}
-        <div>Name:</div>
-        <div class=" mb-2 pb-2">
-        {{form.name}}
-        </div>
-        <div>Address:</div>
-        <div class="mb-2 pb-2 ">
-        {{form.address}}
-       </div>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Names</label>
+                <div id="name" class="form-control">{{form.name.value}}</div>
+                <div id="passwordHelpBlock" class="form-text">
+                Your password must be 30 characters max.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <div id="address" class="form-control form-text">{{form.address.value}}</div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 
        <input class="btn fs-4 btn-primary" type='submit'>
 
